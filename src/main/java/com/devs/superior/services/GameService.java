@@ -34,7 +34,7 @@ public class GameService {
 	}
 	
 	/**
-	 * Dado o id de um lista retorna os games desta lista.
+	 * Dado o id de uma lista retorna os games desta lista.
 	 *
 	 * A busca é realizada a partir do identificador da lista,
 	 * retornando os games ordenados pela posição definida na lista.
