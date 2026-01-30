@@ -32,8 +32,17 @@ public class GameService {
 		return dto;
 
 	}
-
-	@Transactional(readOnly = true)
+	
+	/**
+	 * Dado o id de um lista retorna os games desta lista.
+	 *
+	 * A busca é realizada a partir do identificador da lista,
+	 * retornando os games ordenados pela posição definida na lista.
+	 *
+	 * @param listId identificador da lista de games
+	 * @return lista de GameMinDTO pertencentes à lista informada
+	 */
+    @Transactional(readOnly = true)
 	public List<GameMinDTO> findByList(Long listId) {
 		List<GameMinProjection> result = gameRepository.searchByList(listId);
 		List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
